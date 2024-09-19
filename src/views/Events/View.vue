@@ -83,7 +83,7 @@ export default {
                     const map = new mapboxgl.Map({
                         container: mapContainer,
                         style: "mapbox://styles/mapbox/streets-v12",
-                        center: [this.eventData.place.lat, this.eventData.place.lon],
+                        center: [this.eventData.place.lon, this.eventData.place.lat],
                         zoom: 9,
                         pitch: 60, // pitch in degrees
                         bearing: -60, // bearing in degrees
