@@ -65,9 +65,9 @@
             </div>
 
             <div class="mb-4 mx-4">
-                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Заявки на волонтерство</label>
-                <ion-segment v-model="selectedSegment" value="enabled" @ionChange="segmentChanged" class="mb-4"
-                    >
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Заявки на
+                    волонтерство</label>
+                <ion-segment v-model="selectedSegment" value="enabled" @ionChange="segmentChanged" class="mb-4">
                     <ion-segment-button value="enabled">
                         <ion-label>Принимаются</ion-label>
                     </ion-segment-button>
@@ -82,9 +82,8 @@
                 process: (fieldName: any, file: any, metadata: any, load: any, error: any, progress: any, abort: any, transfer: any, options: any) => {
                     handleFileUpload(fieldName, file, metadata, load, error, progress, abort);
                 },
-            }" 
-            style="margin-left: 16px; margin-right: 16px;"
-            label-idle="Перетащите или загрузите изображения здесь..." allow-multiple="true" max-files="3" />
+            }" style="margin-left: 16px; margin-right: 16px;"
+                label-idle="Перетащите или загрузите изображения здесь..." allow-multiple="true" max-files="3" />
 
             <div class="mb-4 mx-4">
                 <ion-button expand="block" @click="sendEvent">Добавить</ion-button>
@@ -220,7 +219,10 @@ export default {
             this.$axios.post(data.api.hostname + '/api/events/', eventData)
                 .then(response => {
                     if (response.status === 201) {
-                        alert('Event created successfully! ' + response.data.id);
+                        //alert('Event created successfully! ' + response.data.id);
+                        setTimeout(() => {
+                            this.$router.push({ path: '/tabs/Events/Feed/' });
+                        }, 50);
                     }
                 })
                 .catch(error => {
@@ -232,7 +234,7 @@ export default {
             const formData = new window.FormData(); // Explicitly use the window object
             formData.append(fieldName, file, file.name);
             const request = new XMLHttpRequest();
-            alert(data.api.hostname + '/api/events/images/')
+            //alert(data.api.hostname + '/api/events/images/')
             request.open('POST', data.api.hostname + '/api/events/images/');
 
             // Add the authorization token from localStorage

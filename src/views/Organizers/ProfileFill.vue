@@ -53,8 +53,8 @@
                                     <ion-card-title>{{ place.name }}</ion-card-title>
                                 </ion-card-header>
                                 <ion-card-content>
-                                    {{ place.inn }}<br/>
-                                    {{ place.kpp }}<br/>
+                                    {{ place.inn }}<br />
+                                    {{ place.kpp }}<br />
                                     {{ place.ogrn }}
                                 </ion-card-content>
                             </ion-card>
@@ -180,7 +180,11 @@ export default {
             this.$axios.post(data.api.hostname + '/api/organizations/create/', eventData)
                 .then(response => {
                     if (response.status === 201) {
-                        alert('Event created successfully! ' + response.data.id);
+                        localStorage.setItem('suggestions_CreateOrganization', "turn_off");
+                        //alert('Event created successfully! ' + response.data.id);
+                        setTimeout(() => {
+                            this.$router.push({ path: '/tabs/Events/View/' + response.data.id });
+                        }, 50);
                     }
                 })
                 .catch(error => {

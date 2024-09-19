@@ -88,7 +88,7 @@ export default {
                     .addTo(this.map);
 
                 marker.getElement().addEventListener('click', () => {
-                    alert(`Marker at [${lng}, ${lat}] clicked!`);
+                    //alert(`Marker at [${lng}, ${lat}] clicked!`);
                 });
             }
         }

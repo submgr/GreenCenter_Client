@@ -76,7 +76,7 @@
 
 <script>
 import { defineComponent } from 'vue';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal, IonSegment, IonSegmentButton } from '@ionic/vue';
+import { toastController, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonModal, IonSegment, IonSegmentButton } from '@ionic/vue';
 import axios from 'axios';
 import data from '../../modules/global.js';
 
@@ -152,7 +152,7 @@ export default defineComponent({
             const formData = new window.FormData(); // Explicitly use the window object
             formData.append(fieldName, file, file.name);
             const request = new XMLHttpRequest();
-            alert(data.api.hostname + '/api/events/images/')
+            //alert(data.api.hostname + '/api/events/images/')
             request.open('POST', data.api.hostname + '/api/videos/videofile/');
 
             // Add the authorization token from localStorage
@@ -185,7 +185,7 @@ export default defineComponent({
                 },
             };
         },
-        saveVideo() {
+        async saveVideo() {
             console.log("saving video");
             var eventData;
             if (this.form.videoType == "event") {
@@ -206,9 +206,19 @@ export default defineComponent({
             }
 
             this.$axios.post(data.api.hostname + '/api/videos/', eventData)
-                .then(response => {
+                .then(response => async () => {
                     if (response.status === 201) {
-                        alert('Event created successfully! ' + response.data.id);
+                        //alert('Event created successfully! ' + response.data.id);
+                        const toast = await toastController.create({
+                            message: 'Вход в систему выполнен успешно!',
+                            duration: 2000,
+                            position: 'top',
+                            color: 'success'
+                        });
+                        await toast.present();
+                        setTimeout(() => {
+                            this.$router.push({ path: '/tabs/HomePage' });
+                        }, 50);
                     }
                 })
                 .catch(error => {
