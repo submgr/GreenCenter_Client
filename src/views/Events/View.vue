@@ -84,7 +84,7 @@ export default {
                         container: mapContainer,
                         style: "mapbox://styles/mapbox/streets-v12",
                         center: [this.eventData.place.lon, this.eventData.place.lat],
-                        zoom: 9,
+                        zoom: 14,
                         pitch: 60, // pitch in degrees
                         bearing: -60, // bearing in degrees
                     });
