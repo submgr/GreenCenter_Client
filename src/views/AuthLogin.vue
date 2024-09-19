@@ -31,7 +31,7 @@
             <span class="block w-full h-px bg-gray-300 mt-10"></span>
             <p class="inline-block w-fit text-sm bg-white px-2 absolute -top-2 inset-x-0 mx-auto">или продолжите с</p>
           </div>
-          <div class="grid grid-cols-3 gap-x-3 mt-5" @click="checkAccessToken()">
+          <div v-if="!ios" class="grid grid-cols-3 gap-x-3 mt-5" @click="checkAccessToken()">
             <div id="buttonContainerId" class="w-full" style="width: 350px;" @click="checkAccessToken()">
 
             </div>
@@ -59,7 +59,8 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      ios: false
     };
   },
   methods: {
@@ -115,6 +116,13 @@ export default {
   },
 
   mounted() {
+
+    const isIOS = () => {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    };
+    if (isIOS()) {
+      this.ios = true;
+    }
     const tabsEl = document.querySelector('ion-tab-bar');
     if (tabsEl) {
       tabsEl.hidden = true;
