@@ -15,10 +15,10 @@ function isWebpackHotUpdate(){
 }
 
 if (isWebpackHotUpdate() == true) {
-  apiserver_hostname = "https://ecoprosvet-backend.onrender.com";
+  apiserver_hostname = "https://bricshack.deqstudio.com";
   console.log("[GlobalProvider] Serving trough LOCAL (DEV) backend all further requests...")
 } else {
-  apiserver_hostname = "https://ecoprosvet-backend.onrender.com";
+  apiserver_hostname = "https://bricshack.deqstudio.com";
   console.log("[GlobalProvider] Serving trough PRODUCTION backend all further requests...")
 }
 

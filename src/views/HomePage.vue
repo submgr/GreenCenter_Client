@@ -8,12 +8,15 @@
             <div @click="goto('/tabs/tab1')" style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 17px;">
                 <img src="https://i.ibb.co/C9YBBJT/1360-3x-6.png" style="border-radius: 20px;" />
             </div>
+            <div @click="goto('/tabs/tab1')" style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 17px;">
+                <img src="https://i.ibb.co/C9YBBJT/1360-3x-6.png" style="border-radius: 20px;" />
+            </div>
         </ion-content>
     </ion-page>
 </template>
 
 <script>
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/vue';
+import { IonGrid, IonRow, IonCol, IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/vue';
 
 export default {
     name: 'HomePage',
@@ -26,7 +29,10 @@ export default {
         IonCard,
         IonCardHeader,
         IonCardTitle,
-        IonCardContent
+        IonCardContent,
+        IonGrid,
+        IonRow,
+        IonCol
     },
     mounted() {
         const tabsEl = document.querySelector('ion-tab-bar');
