@@ -45,7 +45,7 @@ export default {
       try {
         const response = await this.$axios.get(data.api.hostname + '/api/videos/');
         this.videos = response.data.map(video => ({
-          src: video.videofile.filepond,
+          src: video.videofile.filepond.replace("http://", "https://"),
           title: video.title,
           description: video.description
         }));
