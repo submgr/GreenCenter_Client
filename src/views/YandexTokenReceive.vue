@@ -24,11 +24,6 @@ export default {
         };
     },
     mounted() {
-        const tabsEl = document.querySelector('ion-tab-bar');
-        if (tabsEl) {
-            tabsEl.hidden = true;
-            tabsEl.style.height = "1";
-        }
         const urlParams = new URLSearchParams(window.location.search);
         const authdata = urlParams.get('authdata');
 
