@@ -37,7 +37,7 @@ export default {
     mounted() {
         const tabsEl = document.querySelector('ion-tab-bar');
         if (tabsEl) {
-            tabsEl.hidden = true;
+            tabsEl.hidden = false;
             tabsEl.style.height = "1";
         }
     }
