@@ -93,6 +93,7 @@ export default defineComponent({
 
         if (response.status === 200) {
           console.log('Request sent successfully');
+          this.$router.push('/tabs/Events/RegistrationSent');
         }
       } catch (error) {
         console.error('Error sending request:', error);

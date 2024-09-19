@@ -183,7 +183,7 @@ export default {
                         localStorage.setItem('suggestions_CreateOrganization', "turn_off");
                         //alert('Event created successfully! ' + response.data.id);
                         setTimeout(() => {
-                            this.$router.push({ path: '/tabs/Events/View/' + response.data.id });
+                            this.$router.push({ path: '/tabs/Events/Feed/' });
                         }, 50);
                     }
                 })

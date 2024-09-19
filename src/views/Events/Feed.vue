@@ -15,8 +15,8 @@
                             {{ event.name }} {{ event.id }}
                         </h3>
                         <span class="text-gray-500 dark:text-gray-400">{{ event.description }}</span>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Starts: {{ new Date(event.start_time).toLocaleString() }}</p>
-                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Ends: {{ new Date(event.end_time).toLocaleString() }}</p>
+                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Начало: {{ new Date(event.start_time).toLocaleString() }}</p>
+                        <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">Конец: {{ new Date(event.end_time).toLocaleString() }}</p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,12 @@ export default {
             this.$router.push({ path: `/tabs/events/View/${eventId}` });
         },
         redirectToAddPlace() {
-            this.$router.push({ path: '/tabs/Events/Add' });
+            if(localStorage.getItem('suggestions_CreateOrganization') && localStorage.getItem('suggestions_CreateOrganization') == "turn_off"){
+                this.$router.push({ path: '/tabs/Events/Add' });
+            }else{
+                this.$router.push({ path: '/tabs/Organizers/ProfileFill' });
+            }
+            
         }
     }
 };

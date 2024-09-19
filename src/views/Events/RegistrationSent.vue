@@ -34,7 +34,7 @@
     },
     methods: {
       goBack() {
-        this.$router.push('/');
+        this.$router.push('/tabs/HomePage');
       }
     }
   });
