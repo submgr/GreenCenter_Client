@@ -15,10 +15,10 @@ function isWebpackHotUpdate(){
 }
 
 if (isWebpackHotUpdate() == true) {
-  apiserver_hostname = "https://1118-188-32-82-225.ngrok-free.app";
+  apiserver_hostname = "https://7f60-188-32-82-225.ngrok-free.app";
   console.log("[GlobalProvider] Serving trough LOCAL (DEV) backend all further requests...")
 } else {
-  apiserver_hostname = "https://1118-188-32-82-225.ngrok-free.app";
+  apiserver_hostname = "https://7f60-188-32-82-225.ngrok-free.app";
   console.log("[GlobalProvider] Serving trough PRODUCTION backend all further requests...")
 }
 
