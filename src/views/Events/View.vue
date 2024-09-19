@@ -89,6 +89,11 @@ export default {
                         bearing: -60, // bearing in degrees
                     });
 
+                    // Add marker at the same coordinates as the map's center
+                    new mapboxgl.Marker()
+                        .setLngLat([this.eventData.place.lon, this.eventData.place.lat])
+                        .addTo(map);
+
                     this.map = map;
                 }
             });
