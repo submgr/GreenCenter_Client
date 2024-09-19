@@ -8,8 +8,8 @@
             <div @click="goto('/tabs/tab1')" style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 17px;">
                 <img src="https://i.ibb.co/C9YBBJT/1360-3x-6.png" style="border-radius: 20px;" />
             </div>
-            <div @click="goto('/tabs/tab1')" style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 17px;">
-                <img src="https://i.ibb.co/C9YBBJT/1360-3x-6.png" style="border-radius: 20px;" />
+            <div @click="goto('/tabs/Shorts/Upload')" style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 25px;">
+                <img src="https://i.ibb.co/pWX05DY/Frame-1000000808-1.png" style="border-radius: 20px;" />
             </div>
         </ion-content>
     </ion-page>
