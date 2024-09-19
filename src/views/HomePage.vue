@@ -11,7 +11,7 @@
                 <img :src="images[1]" style="border-radius: 20px;" />
             </div>
             <div @click="goto('/tabs/Shorts/Upload')"
-                style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 25px;">
+                style="width: calc(100% - 50px); margin-left: 20px; margin-right: 15px; height: auto; border-radius: 20px; margin-top: 17px;">
                 <img :src="images[2]" style="border-radius: 20px;" />
             </div>
         </ion-content>
